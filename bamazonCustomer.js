@@ -62,13 +62,13 @@ function promptUser() {
       {
           name: "item_id",
           type: "input",
-          message: "What is the ID number of the item you would like to purchase?[Quite with Q] ",
+          message: "What is the ID number of the item you would like to purchase?[Quit with Q] ",
                    
       },
       {
           name: "quantity",
           type: "input",
-          message: "How many you would like?[Quite with Q] ",
+          message: "How many you would like?[Quit with Q] ",
          
           }
          
@@ -79,5 +79,31 @@ function promptUser() {
       
       var quantity = answer.quantity;
                   
-  })
+  //------------- Valid Input and Quit Purchasing----------------------------
+if(itemId === "Q" || quantity === "Q"){
+  console.log("Thanks for using Bamazon");
+  connection.end();
+  
+
+}
+ 
+ else if (itemId === "" ) {
+  console.log("Please enter Item ID and quantity");
+  displayProducts();
+} 
+  else if(quantity === ""){
+    console.log("Please enter a quantity");
+  displayProducts();
+  }
+  
+  else{
+  console.log("------------------------------------------\n")
+  console.log("Item ID Selected: " +itemId);
+  console.log("Quantity Selected: " +quantity);
+  console.log("------------------------------------------\n")
+ 
+ 
+
+  }
+});    
 }
