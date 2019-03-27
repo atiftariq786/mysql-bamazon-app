@@ -11,6 +11,73 @@ var connection = mysql.createConnection({
   user: "root",
 
   // Your password
-  password: "",
-  database: "product_db"
+  password: "asialink",
+  database: "bamazon_db"
 });
+
+// ===================================Main Operation =============================================
+
+// connect to the mysql server and sql database
+connection.connect(function(err) {
+  if (err) throw err;
+// run the start function to begin displaying products
+  displayProducts();
+});
+
+// retrieve and display all products in the bamazon products table from this function
+function displayProducts() {
+
+  connection.query(
+      "SELECT * FROM products", 
+  function(err, data) {
+      // account for potential errors
+      if (err) throw err;              
+
+      console.log("============================== Bamazon Products =======================================\n");
+
+      
+      console.log("Item ID","----","Product Name","----","Department Name","----","Price","----","Stock Quantity \n")
+  for (var i = 0; i < data.length; i++) {
+    console.log(
+
+      "   " + data[i].item_id + "            "
+    + data[i].product_name + "            "
+    + data[i].department_name + "            "
+    + data[i].price + "            "
+    + data[i].stock_quantity);
+          
+          
+      }
+      console.log("=======================================================================================\n");
+      // call my prompt function 
+      promptUser();
+  });
+}
+
+// function to prompt ask to user which item they would like to purchase 
+function promptUser() {
+
+  // begin my inquirer prompt
+  inquirer.prompt([
+      {
+          name: "item_id",
+          type: "input",
+          message: "What is the ID number of the item you would like to purchase?[Quite with Q] ",
+                   
+      },
+      {
+          name: "quantity",
+          type: "input",
+          message: "How many you would like?[Quite with Q] ",
+         
+          }
+         
+  ]).then(function(answer) {
+
+      // store user choices in local variables
+      var itemId = answer.item_id;
+      
+      var quantity = answer.quantity;
+                  
+  })
+}
