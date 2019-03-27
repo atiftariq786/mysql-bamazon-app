@@ -102,8 +102,32 @@ if(itemId === "Q" || quantity === "Q"){
   console.log("Quantity Selected: " +quantity);
   console.log("------------------------------------------\n")
  
- 
+  checkQuantity(quantity,itemId);
 
   }
 });    
+}
+
+function checkQuantity(quantity,itemId){
+
+  connection.query('SELECT stock_quantity,price FROM products WHERE item_id = "' + itemId +'"', function(err, res) {
+   if (err) throw err;
+   
+   
+   var updateQty = res[0].stock_quantity;
+   var price = res[0].price;
+
+
+   if (updateQty >= quantity ){
+
+    var totalPrice = price * quantity;
+
+    console.log("Succesfully purchased!");
+    console.log("Quantity: " + quantity + "  Unit Price: " + price + " $");
+    console.log("Total Price: " + totalPrice + " $");
+
+
+   }
+
+})
 }
