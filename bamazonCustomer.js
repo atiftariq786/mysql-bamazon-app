@@ -1,7 +1,7 @@
-var mysql = require("mysql");
-var inquirer = require("inquirer");
+  var mysql = require("mysql");
+  var inquirer = require("inquirer");
 
-var connection = mysql.createConnection({
+  var connection = mysql.createConnection({
   host: "localhost",
 
   // Your port; if not 3306
@@ -18,26 +18,26 @@ var connection = mysql.createConnection({
 // ===================================Main Operation =============================================
 
 // connect to the mysql server and sql database
-connection.connect(function(err) {
+  connection.connect(function(err) {
   if (err) throw err;
 // run the start function to begin displaying products
   displayProducts();
 });
 
 // retrieve and display all products in the bamazon products table from this function
-function displayProducts() {
+  function displayProducts() {
 
   connection.query(
       "SELECT * FROM products", 
   function(err, data) {
-      // account for potential errors
+// account for potential errors
       if (err) throw err;              
 
       console.log("============================== Bamazon Products =======================================\n");
 
       
       console.log("Item ID","----","Product Name","----","Department Name","----","Price","----","Stock Quantity \n")
-  for (var i = 0; i < data.length; i++) {
+    for (var i = 0; i < data.length; i++) {
     console.log(
 
       "   " + data[i].item_id + "            "
@@ -54,8 +54,8 @@ function displayProducts() {
   });
 }
 
-// function to prompt ask to user which item they would like to purchase 
-function promptUser() {
+  // function to prompt ask to user which item they would like to purchase 
+  function promptUser() {
 
   // begin my inquirer prompt
   inquirer.prompt([
@@ -80,14 +80,14 @@ function promptUser() {
       var quantity = answer.quantity;
                   
   //------------- Valid Input and Quit Purchasing----------------------------
-if(itemId === "Q" || quantity === "Q"){
+  if(itemId === "Q" || quantity === "Q"){
   console.log("Thanks for using Bamazon");
   connection.end();
   
 
 }
  
- else if (itemId === "" ) {
+  else if (itemId === "" ) {
   console.log("Please enter Item ID and quantity");
   displayProducts();
 } 
@@ -108,7 +108,7 @@ if(itemId === "Q" || quantity === "Q"){
 });    
 }
 
-function checkQuantity(quantity,itemId){
+  function checkQuantity(quantity,itemId){
 
   connection.query('SELECT stock_quantity,price FROM products WHERE item_id = "' + itemId +'"', function(err, res) {
    if (err) throw err;
@@ -125,9 +125,17 @@ function checkQuantity(quantity,itemId){
     console.log("Succesfully purchased!");
     console.log("Quantity: " + quantity + "  Unit Price: " + price + " $");
     console.log("Total Price: " + totalPrice + " $");
-
+    
+    updateData(itemId,quantity,updateQty);
 
    }
+   else{
+
+    console.log("Insufficient quantity!");
+    console.log("Available stock: " + updateQty);
+    console.log("Customer required: " + quantity);
+    displayProducts();
+  }
 
 })
 }
