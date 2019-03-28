@@ -9,28 +9,36 @@
 *   Javascript
 *   Node.js
 *   Mysql database
-*   NPM Inquirer Pakage
-*   NPM Mysql Pakage
+*   NPM Inquirer Package
+*   NPM Mysql Package
 
 ## Mysql Bamazon App Videos
 
 ** Video Link
 
-[Bamazon](https://drive.google.com/open?id=1INnvBV7moTcg5ZqSxFUW-NgWI_SyB900)
+[Mysql Bamazon App Video](https://drive.google.com/open?id=1INnvBV7moTcg5ZqSxFUW-NgWI_SyB900)
 
 ## Mysql Bamazon App Images
 
-** Image
+** Bamazone product item purchased
 
-![alt text]( "image")
+![alt text](https://github.com/atiftariq786/mysql-bamazon-app/blob/master/assets/images/Item-Purchased.png?raw=true "Item Purchased")
 
-** Image1
+** Bamazone product insufficient quantity 
 
-![alt text]( "image1")
+![alt text](https://github.com/atiftariq786/mysql-bamazon-app/blob/master/assets/images/Insufficient-quantity.png?raw=true "Insufficient Quantity")
 
-** Image2
+** Bamazone product valid input
 
-![alt text]( "image2")
+![alt text](https://github.com/atiftariq786/mysql-bamazon-app/blob/master/assets/images/Valid%20input.png?raw=true "Valid Input")
+
+** Mysql database updated
+
+![alt text](https://github.com/atiftariq786/mysql-bamazon-app/blob/master/assets/images/Mysql-database-updated.png?raw=true "Mysql database updated")
+
+** Quit purchasing
+
+![alt text](https://github.com/atiftariq786/mysql-bamazon-app/blob/master/assets/images/Runtime-Quit%20Shoping.png?raw=true "Quit purchasing")
 
 ## Mysql Bamazon Description
 
