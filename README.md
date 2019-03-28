@@ -3,7 +3,7 @@
 *   This is Mysql app that depends on user input from the command line
 *   It uses a MySQL database on the back-end to store its product information.
 *   It relies on the npm inquirer package to display prompts.
-*   It takes the user input and give back response of the product purchasing detail as per available        stock in the bamazon product.
+*   It takes the user input and give back response of the product purchasing detail as per available stock in the bamazon        product.
 
 ## Technologies Used
 *   Javascript
@@ -16,13 +16,9 @@
 
 ** Video Link
 
-[Bamazon](video)
+[Bamazon](https://drive.google.com/open?id=1INnvBV7moTcg5ZqSxFUW-NgWI_SyB900)
 
-** Video Link
-
-[Bamazon](video)
-
-## Liri App Images
+## Mysql Bamazon App Images
 
 ** Image
 

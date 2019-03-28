@@ -23,6 +23,7 @@
 // run the start function to begin displaying products
   displayProducts();
 });
+// ===================================Display Product Function =============================================
 
 // retrieve and display all products in the bamazon products table from this function
   function displayProducts() {
@@ -48,7 +49,8 @@
   });
 }
 
-  // function to prompt ask to user which item they would like to purchase 
+ //==================================Prompt User Function===========================================
+
   function promptUser() {
 
   // begin my inquirer prompt
@@ -101,6 +103,7 @@
   }
 });    
 }
+//==================================Check Quantity Function===========================================
 
   function checkQuantity(quantity,itemId){
 
@@ -133,6 +136,7 @@
 
 })
 }
+//==================================Update Product Function===========================================
 
 function updateData(itemId,quantity,updateQty){
 
@@ -157,4 +161,4 @@ function updateData(itemId,quantity,updateQty){
   
   }
   
-  
+//***************************************End Bamazon Product Code **********************************//
