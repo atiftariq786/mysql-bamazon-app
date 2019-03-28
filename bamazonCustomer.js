@@ -139,3 +139,28 @@
 
 })
 }
+
+function updateData(itemId,quantity,updateQty){
+
+  var newQty = updateQty-quantity;
+  connection.query("UPDATE products SET ? WHERE ?",
+    [
+      
+      {
+        stock_quantity: newQty
+      },
+  
+      {
+        item_id: itemId
+      }
+           
+    ],
+    
+  );
+  
+  displayProducts();
+  
+  
+  }
+  
+  
