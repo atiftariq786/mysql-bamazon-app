@@ -38,13 +38,7 @@
       
       console.log("Item ID","----","Product Name","----","Department Name","----","Price","----","Stock Quantity \n")
     for (var i = 0; i < data.length; i++) {
-    console.log(
-
-      "   " + data[i].item_id + "            "
-    + data[i].product_name + "            "
-    + data[i].department_name + "            "
-    + data[i].price + "            "
-    + data[i].stock_quantity);
+    console.log("   " + data[i].item_id + "         "+ data[i].product_name + "        "+ data[i].department_name +"          "+ data[i].price + "          "+ data[i].stock_quantity);
           
           
       }
